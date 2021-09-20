@@ -1,6 +1,6 @@
 ---
 title: "**Statistical Analysis Plan**"
-subtitle: "**Average flows predicting based on generalized additive models and frequent model averaging**"
+subtitle: "**Spatiotemporal modeling and predicting of average flows in Scotland based on generalized additive models**"
 author: "Mengran Li"
 fontsize: 12pt
 output: pdf_document
@@ -16,11 +16,11 @@ Daily river flows in Scotland.
 
 ## Objectives
 
-- Do average daily flows in Scotland vary over space?
+- To detect the data pattern of average daily flows over space.
 
-- Do average daily flows in Scotland vary over time?
+- To detect the data pattern of average daily flows over time.
 
-- Are the covariates effective to predict average flows?
+- To predict the average flows and evaluate the efficiency of the covariates in forcasting.
 
 ## Data Collection
 
@@ -28,17 +28,17 @@ The daily flow data and gauge station information are provided by the Scottish E
 
 ## Variables Under Consideration
 
-- Flow: average daily flow ($m^3/s$); **main response variables**
+- **Flow**: average daily flow ($m^3/s$); **main response variables**
 
-- Year: temporal effect, 1989 - 2015; **covariate**
+- **Time**: temporal effect, 1989 - 2015; **covariate**
 
-- Day: seasonal effect, days within a year, 1 - 365; **covariate**
+- **Season**: seasonal effect, days within a year, 1 - 365; **covariate**
 
-- Easting and Northing: spatial effect, longitude and latitude; **covariates**
+- **Space**: spatial effect, longitude and latitude, (easting, northing); **covariates**
 
-- Catchment.Area: catchment area of the measured river ($km^2$); **covariate**
+- **Catchment.Area**: catchment area of the measured river ($km^2$); **covariate**
 
-- Max.Altitude: max altitude inside a catchment; **covariate**
+- **Max.Altitude**: max altitude inside a catchment; **covariate**
 
 ## Missing Data Procedures
 
@@ -54,42 +54,57 @@ The proportion of missing values will be checked and the missing values will be 
 
 ## Models to be fitted 
 
--  Candidate models
+###  Candidate models
 
    -  Linear models
   
    -  GAMs
-  
-   -  Gaussian Process
+   
+The models will be applied in one or several rivers for the initial exploration respectively and then in the whole dataset. 
+   
+### Variable sets
 
-- Variable sets
+  - **Base model**
+  
+  Catchment.Area + Max.Altitude
+  
+  - To consider **temporal** and **spatial** effects 
+  
+  Time + Season + Space + Catchment.Area + Max.Altitude
+  
+  - To add **interaction** between **trend** and **season**.
+  
+  Time + Season + Space + Time$\times$Season + Catchment.Area + Max.Altitude
+  
+  - To consider **interaction** between **temporal** and **spatial** effects.
+  
+  Time + Season + Space + Time$\times$Season + Time$\times$Space + Season$\times$Space + Catchment.Area + Max.Altitude
+  
+### Model Selection
+  
+  - GAMs
 
-  - Catchment.Area + Max.Altitude
-  
-  - Trend + Catchment.Area + Max.Altitude
-  
-  - Trend + Season + Catchment.Area + Max.Altitude
-  
-  - Trend + Season + Spatio + Catchment.Area + Max.Altitude
-  
-  - Trend + Season + Spatio + interaction + Catchment.Area + Max.Altitude
+     -  Choose the numbers of basis functions 
+     
+     -  A smoothness penalty is imposed on the spline coefficients. 
+     
+     -  Smoothing parameters are chosen based on the AIC/BIC/SIC/KL loss etc.
 
-- Model Selection
+     -  For each of four type models mentioned in *Variable sets*, one best model is selected.
   
-  - AIC/BIC/SIC etc. to compare different nested models.
-  
-  - Likelihood ratio to test the significance of covariates under nested models.
-  
-  - A best model is selected in each type of models.
+### Model diagnosis, prediction and comparasion
 
-  - The estimated parameters and mean flows with 95% confidence intervals of best models of different types will be plotted and compared.
-  
-- Prediction
+For the four linear models and the selected four GAMs, 
 
-  The predictions of mean flows in 1, 10, 100 years are illustraed and compared.
+  - One of AIC/BIC/SIC/KL loss etc. is used to check the nested models.
   
-  Root mean square prediction error: leave-one-out cross validation to choose the best model.
+  - Likelihood ratio is employed to test the significance of covariates.
+
+  - The estimated parameters and fitted values with 95% confidence intervals will be plotted and compared.
+
+  - Residual correlations are investigated by means of empirical variograms and autocorrelation plots.
   
-  The final full predictions of whole scottish mean flows in 1/10/100 years will be drawn in a map.
+  - The predictions of whole scottish mean flows via Kriging will be drawn in a map.
   
+  - Root mean square prediction error: leave-one-out cross validation to evaluate the performance of the selected models.
   
