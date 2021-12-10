@@ -1,0 +1,7 @@
+Variable,Meaning,Type
+Flow,average daily flow ($m^3/s$),main response variables
+Time,"temporal effect, 1989 - 2015",covariate
+Season,"seasonal effect, days within a year, 1 - 365",covariate
+Space,"spatial effect, longitude and latitude, (easting, northing)",covariate
+Catchment.Area,catchment area of the measured river ($km^2$),covariate
+Max.Altitude,max altitude inside a catchment,covariate

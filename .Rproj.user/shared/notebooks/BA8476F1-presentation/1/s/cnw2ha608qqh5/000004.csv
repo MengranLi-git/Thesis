@@ -1,0 +1,4 @@
+"0","load(""prediction.Rdata"")"
+"0","vari <- variog(residUK)"
+"2","Error in variog(residUK) : could not find function ""variog""
+"

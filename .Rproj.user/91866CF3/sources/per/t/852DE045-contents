@@ -1,0 +1,128 @@
+---
+title: "SAP"
+output: pdf_document
+---
+
+## Population
+
+Register data on emigration and mortality for the period 2001–2014, including individuals aged 16–80 residing.
+
+## Objectives
+
+- Associations between urban green spaces (UGS) and Self-report mental health
+
+## Data Collection
+
+
+
+## Variables Under Consideration
+
+### Response
+
+- Self-report mental health (SMH) is rated on a 5-point scale from 1 (never) to 5 (always).
+
+### Exposure
+
+Four types of UGS index
+
+### Intersectionality dimensions
+
+- sociaeconomics status (SES)
+
+  - Income: 5,000-8,000; 8,000-10,000; 10,000-20,000; more than 20,000
+
+  - Education attainment: Below primary; Junior high; Senior; college or above
+
+  - Household registration: Local; Foreign
+
+- Gender: Male; Female
+
+- Family structure: Nuclear; Joint; Primary families)
+
+### Potential confounders 
+
+- Land use: 
+
+  -  population density (continuous in person/km2), 
+  
+  -  street intersection density (continuous in number of intersections/km2)
+  
+  -  land use mix (continuous variable which ranges from 0 to 1). 
+
+- Area-level SEP: the percentage of unemployed over the total working population at the Juweihui level.
+
+- Outdoor air: PM2.5 (fine particulate matter with a diameter of 2.5 µm or less). PM2.5 was derived from the 2016 Global Annual PM2.5 data grid, which uses MODIS, MISR and Sea WiFS Aerosol Optical Depth (AOD) data with geographically weighted regression, and available from the NASA Socioeconomic Data and Applications Center (SEDAC) at a 1 k m × 1 km spatial resolution (Van Donkelaar et al., 2016). 
+  
+- perceived noise: A self-report scale is used to measure respondents' perceptions of noise pollution. Respondents were asked how the following noise pollution in their local community affected their lives (ranging from "no such problem = 1" to "very serious = 5").
+
+- Personal health conditions: 
+
+  -  chronic disease (yes vs no), 
+  
+  -  current smoking (current smoker vs non-smoker) 
+  
+  -  alcohol consumption statuses (drinker vs non-drinker)
+
+## Missing value processing
+
+To conduct multiple imputation by chained equations, carrying out 15 multiple 
+imputations with 10 cycles of iterations each, that generated 15 complete datasets
+
+## Summaries to be presented
+
+-  Summary table for all variables
+
+-  boxplot of UGS, grouped by SMH
+
+-  linear regression plot between UGS and ORs of SMH
+
+## Models to be fitted
+
+### Candidate models
+
+-   hierarchy multinomial logit regression
+
+The SMH has five levels. We choose level 1 as the baseline and compare different levels of SMH with base line.
+
+### Variable sets
+
+#### Basic models (Response ~ exposure)
+
+SMH ~ UGS (fit the models with four UGS respectively)
+
+#### Potential confounders (Response ~ exposure + confounders)
+
+SMH ~ UGS + Land use
+
+SMH ~ UGS + Land use + Area-level SEP
+
+SMH ~ UGS + Land use + Area-level SEP + Outdoor air
+
+SMH ~ UGS + Land use + Area-level SEP + Outdoor air +  noise pollution
+
+Likelihood ratio test to check the significant confounders
+
+#### Intersectionality (Response ~ exposure + confounders + intersectionality)
+
+
+Two-grade:
+
+SMH ~ UGS + confounders + SES * gender
+
+SMH ~ UGS + confounders + SES * Family structure
+
+SMH ~ UGS + confounders + gender * Family structure
+
+Three-grade:
+
+SMH ~ UGS + confounders + SES * gender * Family structure
+
+LRT to test to check the significant confounders
+
+#### mediator
+
+
+SMH ~ UGS * Outdoor air + confounders + intersectionality
+
+UGS ~ Outdoor air
+

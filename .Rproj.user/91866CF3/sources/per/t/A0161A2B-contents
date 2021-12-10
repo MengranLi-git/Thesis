@@ -1,0 +1,307 @@
+#### library packages ####
+library(tidyverse)
+library(maps)
+library(geoR)
+library(mgcv)
+library(kableExtra)
+library(cowplot)
+library(broom)
+library(mgcViz)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(ggspatial)
+library(stringr)
+library(lubridate)
+
+setwd("SAP")
+
+data <- read.csv("../data/River_flows.csv")
+
+nrow(data[!complete.cases(data),])
+data %>% filter(Flow < 0)
+data <- data %>% mutate(River = word(Station, 1))
+#### EDA ####
+
+data[,c("Day", "Month", "Year")] <- data$Date %>% str_split_fixed("/", 3)
+data$Date <- dmy(data$Date)
+data$doy <- yday(data$Date)
+data <- data %>% mutate(doy = as.numeric(doy), Year = as.numeric(Year))
+
+leap <- c(1989:2015)[which(leap_year(1989:2015))]
+
+data[data$Year %in% leap & data$doy > 59, "doy"] <- data[data$Year %in% leap & data$doy > 59, "doy"]-1
+
+save(data, file = "F:/thesis_uofg/files/data.Rdata")
+#### EDA ####
+
+## data processing 
+data %>% select(Flow) %>% mutate(logFlow = log(Flow)) %>% gather(key = "group") %>%
+  ggplot(aes(value)) +
+  geom_density()+
+  theme_bw()+
+  facet_wrap(~group, scale = "free")
+
+#### map ####
+position <- data %>% select(ID, Longitude, Latitude,River)
+position <- unique(position)
+world <- ne_countries(scale = "medium", returnclass = "sf")
+UK <- world %>% filter(sov_a3 == "GB1")
+ggplot(data = UK) +
+  geom_sf(fill = NA) + 
+  coord_sf(xlim = c(-7, -0.5), ylim = c(54.5, 59)) +  
+  geom_point(data = position, aes(x = Longitude, y = Latitude, group = ID),color = "blue") +
+  geom_point(data = position %>% filter(River %in% c("Inver", "Clyde", "Earn", "Deveron")), 
+             aes(x = Longitude, y = Latitude, group = ID), color = "red") +
+  geom_text(data = position %>% filter(River %in% c("Inver", "Clyde", "Earn", "Deveron")), 
+            aes(x = Longitude, y = Latitude, 
+                label = River, group = ID, 
+                vjust = -0.5, hjust = 0.7),size=3) +
+  annotation_scale(location = "tr",style = "ticks", pad_y = unit(2, "cm")) +
+  annotation_north_arrow(location = "tr", pad_x = unit(0.5, "cm"), style = north_arrow_fancy_orienteering())+
+  theme_bw()
+
+#### 
+
+p1 <- data %>% 
+  select("ID", "logFlow", "Year", "Month", "River") %>%
+  group_by(Year) %>%
+  summarise(MeanFlow = mean(logFlow)) %>%
+  mutate(Year = as.numeric(Year)) %>%
+  ggplot(aes(x=Year,y=MeanFlow))+
+  geom_line(size = 1)+
+  geom_smooth(se = FALSE, span = 0.5)+
+  theme_bw()
+
+p2 <- data %>% 
+  select("ID", "logFlow", "Year", "Month", "River") %>%
+  group_by(Month) %>%
+  summarise(MeanFlow=mean(logFlow)) %>% 
+  mutate(Month = as.numeric(Month)) %>%
+  ggplot(aes(x=Month,y=MeanFlow))+
+  geom_line(size = 1)+
+  geom_smooth(se = FALSE)+
+  theme_bw()
+
+p3 <- data %>% 
+  select("ID", "logFlow", "Year", "Month", "River", "doy") %>%
+  group_by(doy) %>%
+  summarise(MeanFlow=mean(logFlow)) %>% 
+  ggplot(aes(x=doy,y=MeanFlow))+
+  geom_smooth(se = FALSE)+
+  geom_line(size = 1)+
+  theme_bw()
+
+p4 <- data %>% 
+  select("ID", "logFlow", "Year", "doy", "River") %>%
+  group_by(doy, Year) %>%
+  summarise(MeanFlow=mean(logFlow)) %>% 
+  ggplot(aes(x=doy,y=MeanFlow,group=Year, color = Year), color = Year)+
+  geom_smooth(se = FALSE)+
+  theme_bw()
+plot_grid(p1,p2,p3,p4, ncol=2, labels="AUTO")
+
+
+load("files/fit.Rdata")
+
+#### Gaussian ####
+fit11 <- bam(Flow ~ Catchment.Area + Max.Altitude + 
+              doy + Year + Longitude + Latitude, 
+             method = "fREML",
+            data = data)
+
+fit12 <- bam(Flow ~ Catchment.Area + Max.Altitude + 
+               s(doy, bs = "bs", m = c(3,2), k 
+                 = 6) + s(Year, bs = "bs", m = c(3,2), k = 5) + te(Longitude, Latitude, bs = "cr", k = 49), 
+             method = "fREML",
+            data = data)
+
+fit13 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49) +
+               ti(doy, Year, bs = "cr"), 
+             method = "fREML",
+             data = data)
+
+fit14 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49) +
+              ti(doy, Year, bs = "cr")+
+              ti(Longitude, Latitude, doy, d=c(2,1),bs = "cr" ) +
+              ti(Longitude, Latitude, Year, d=c(2,1), bs = "cr"), 
+             method = "fREML",
+            data = data)
+
+#### Gamma log ####
+
+fit21 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               doy + Year + Longitude + Latitude,  
+             family = Gamma(link = "log"),
+             method = "fREML",
+               data = data)
+
+fit22 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49),
+             family = Gamma(link = "log"),
+             method = "fREML",
+               data = data)
+
+fit23 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49) +
+               ti(doy, Year, bs = "cr"), 
+             family = Gamma(link = "log"),
+             method = "fREML",
+             data = data)
+
+fit24 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49) +
+                 ti(doy, Year, bs = "cr")+
+                 ti(Longitude, Latitude, doy, d=c(2,1), bs = "cr") +
+                 ti(Longitude, Latitude, Year, d=c(2,1), bs = "cr"), 
+               family = Gamma(link = "log"),
+             method = "fREML",
+               data = data)
+#### link log ####
+
+fit31 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               doy + Year + Longitude + Latitude,
+             family = gaussian(link = "log"),method = "fREML",
+             data = data)
+
+fit32 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49) ,
+             family = gaussian(link = "log"),method = "fREML",
+             data = data)
+
+fit33 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49) +
+               ti(doy, Year, bs = "cr"), 
+             family = gaussian(link = "log"),method = "fREML",
+             data = data)
+
+fit34 <- bam(Flow ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49) +
+               ti(doy, Year, bs = "cr")+
+               ti(Longitude, Latitude, doy, d=c(2,1), bs = "cr") +
+               ti(Longitude, Latitude, Year, d=c(2,1), bs = "cr"), 
+             family = gaussian(link = "log"),method = "fREML",
+             data = data)
+summary(fit43)
+
+#### log-transformation ####
+
+fit41 <- bam(log(Flow) ~ Catchment.Area + Max.Altitude +
+               doy + Year + Longitude + Latitude,
+             method = "fREML",
+             data = data)
+
+fit42 <- bam(log(Flow) ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49) , 
+             method = "fREML",
+             data = data)
+
+fit43 <- bam(log(Flow) ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 12) + s(Year, bs = "bs", m = c(3,2), k = 20) + te(Longitude, Latitude, bs = "cr", k = 49) +
+               ti(doy, Year, bs = "cr"),
+             method = "fREML",
+             data = data)
+
+fit44 <- bam(log(Flow) ~ Catchment.Area + Max.Altitude +
+               s(doy, bs = "bs", m = c(3,2), k = 10) + s(Year, bs = "bs", m = c(3,2), k = 12) + te(Longitude, Latitude, bs = "cr", k = 49) +
+               ti(doy, Year, bs = "cr")+
+               ti(Longitude, Latitude, doy, d=c(2,1), bs = "cr") +
+               ti(Longitude, Latitude, Year, d=c(2,1), bs = "cr"), 
+             method = "fREML",
+             data = data)
+summary(fit44)
+
+plot(fit44, scheme = 2)
+
+save(fit44, file = "F:/thesis_uofg/files/fit.Rdata")
+#### model comparision #####
+
+f <- list()
+for(j in 1:4){
+  f[[j]] <- glance(get(paste0("fit",j,1)))
+  for (i in 2:4){
+    f[[j]] <- rbind(f[[j]], glance(get(paste0("fit",j,i))))
+  }
+}
+
+g <- matrix(NA, ncol = 4, nrow = 4)
+for(j in 1:4){
+  for (i in 1:4){
+    g[i,j] <- summary(get(paste0("fit",j,i)))$dev.expl
+  }
+}
+
+g <- c(g)
+
+library(data.table)
+f <- rbindlist(f)
+
+f <- f[,1:4]
+f <- f %>% add_column(.before = "df", distribution = rep(paste0("model",1:4),4))
+f <- f %>% add_column(.after = "BIC", DER = paste0(round(g*100,2),"%"))
+
+k <- matrix(NA, ncol = 4, nrow = 4)
+for(j in 1:4){
+  h <- get(paste0("fit",j,1))
+  for (i in 2:4){
+    k[i-1,j] <- anova(h, get(paste0("fit",j,i)), test = "F")[2,5]
+  }
+}
+k <- c(k)
+k <- round(k,2)
+k[is.na(k)] <- " "
+
+glance(fit11)
+f <- f %>% add_column(F.stat = k)
+
+k2 <- matrix(NA, ncol = 4, nrow = 4)
+for(j in 1:4){
+  h <- get(paste0("fit",j,1))
+  for (i in 2:4){
+    k2[i-1,j] <- anova(h, get(paste0("fit",j,i)), test = "LRT")[2,4]
+  }
+}
+k2 <- c(k2)
+k2 <- round(k2,0)
+k2[is.na(k2)] <- " "
+
+f <- f %>% add_column(D = k2)
+
+save(f, file = "F:/thesis_uofg/files/comparison.Rdata")
+
+#### coefficient ####
+b <- getViz(fit44)
+pl <- plot(b, allTerms = T) + 
+  l_points() + 
+  l_fitLine(linetype = 3) + 
+  l_fitRaster()+
+  l_fitContour() + 
+  l_ciLine(colour = 2) + 
+  l_ciBar() + 
+  l_fitPoints(size = 1, col = 2) + 
+  theme_get() + 
+  labs(title = NULL)
+print(pl, pages = 1)
+
+plot(fit44, scheme = 2 )
+
+
+load("prediction.Rdata")
+vari <- variog(residUK)
+vari.mc <- variog.mc.env(residUK, obj.variog=vari)
+summary(gamfit3)
+
+qq(b, method = "simul1", a.qqpoi = list("shape" = 1), a.ablin = list("linetype" = 2))+
+  theme_xaringan(title_font_size =16,text_font_size =12)
+
+p2 + theme_bw()
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+"0","data <- read.csv(""../data/River_flows.csv"")"
+"0","data <- data %>% mutate(River = word(Station, 1))"
+"0","data[,c(""Day"", ""Month"", ""Year"")] <- data$Date %>% str_split_fixed(""/"", 3)"
+"0","data$Date <- dmy(data$Date)"
+"0","data$doy <- yday(data$Date)"
+"0","data <- data %>% mutate(doy = as.numeric(doy), Year = as.numeric(Year))"

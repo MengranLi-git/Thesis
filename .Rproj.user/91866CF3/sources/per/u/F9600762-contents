@@ -1,0 +1,13 @@
+library(reshape2)
+library(plotly)
+
+df <- melt(volcano)
+
+ggplot(df, aes(Var1, Var2, z=value)) +
+  geom_raster() +
+  geom_contour_filled()
+  labs(x="West to East",
+       y="North to South",
+       title = "Elevation map of Maunga Whau")
+
+ggplotly(p)

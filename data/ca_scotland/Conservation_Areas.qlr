@@ -1,0 +1,536 @@
+<!DOCTYPE qgis-layer-definition>
+<qlr>
+  <layer-tree-group name="" checked="Qt::Checked" expanded="1">
+    <customproperties/>
+    <layer-tree-layer name="Conservation Areas" checked="Qt::Checked" source="./Conservation_Areas.shp" expanded="1" providerKey="ogr" id="Conservation_Areas_56ffa628_b006_42d4_8cc9_9ae7d213d417">
+      <customproperties/>
+    </layer-tree-layer>
+  </layer-tree-group>
+  <maplayers>
+    <maplayer simplifyAlgorithm="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0" labelsEnabled="0" simplifyDrawingHints="1" readOnly="0" refreshOnNotifyMessage="" simplifyLocal="1" autoRefreshTime="0" type="vector" simplifyDrawingTol="1" geometry="Polygon" maxScale="0" minScale="1e+08" simplifyMaxScale="1">
+      <extent>
+        <xmin>75422.59989999979734421</xmin>
+        <ymin>535896.90000000037252903</ymin>
+        <xmax>448151.79000000015366822</xmax>
+        <ymax>1141674.48130000056698918</ymax>
+      </extent>
+      <id>Conservation_Areas_56ffa628_b006_42d4_8cc9_9ae7d213d417</id>
+      <datasource>./Conservation_Areas.shp</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Conservation Areas</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.15,0.247,0.842,-20.489 +units=m +no_defs</proj4>
+          <srsid>2437</srsid>
+          <srid>27700</srid>
+          <authid>EPSG:27700</authid>
+          <description>OSGB 1936 / British National Grid</description>
+          <projectionacronym>tmerc</projectionacronym>
+          <ellipsoidacronym>airy</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type></type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxx="0" miny="0" minz="0" maxz="0" maxy="0" crs="" dimensions="2" minx="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider encoding="System">ogr</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <legend type="default-vector"/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+      </flags>
+      <renderer-v2 forceraster="0" enableorderby="0" type="singleSymbol" symbollevels="0">
+        <symbols>
+          <symbol name="0" clip_to_extent="1" force_rhr="0" type="fill" alpha="0.5">
+            <layer class="LinePatternFill" locked="0" enabled="1" pass="0">
+              <prop v="45" k="angle"/>
+              <prop v="55,126,184,255" k="color"/>
+              <prop v="2" k="distance"/>
+              <prop v="3x:0,0,0,0,0,0" k="distance_map_unit_scale"/>
+              <prop v="MM" k="distance_unit"/>
+              <prop v="0.26" k="line_width"/>
+              <prop v="3x:0,0,0,0,0,0" k="line_width_map_unit_scale"/>
+              <prop v="MM" k="line_width_unit"/>
+              <prop v="0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+              <prop v="MM" k="outline_width_unit"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" type="QString" value=""/>
+                  <Option name="properties"/>
+                  <Option name="type" type="QString" value="collection"/>
+                </Option>
+              </data_defined_properties>
+              <symbol name="@0@0" clip_to_extent="1" force_rhr="0" type="line" alpha="1">
+                <layer class="SimpleLine" locked="0" enabled="1" pass="0">
+                  <prop v="square" k="capstyle"/>
+                  <prop v="5;2" k="customdash"/>
+                  <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+                  <prop v="MM" k="customdash_unit"/>
+                  <prop v="0" k="draw_inside_polygon"/>
+                  <prop v="bevel" k="joinstyle"/>
+                  <prop v="156,156,156,255" k="line_color"/>
+                  <prop v="solid" k="line_style"/>
+                  <prop v="0.3" k="line_width"/>
+                  <prop v="MM" k="line_width_unit"/>
+                  <prop v="0" k="offset"/>
+                  <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+                  <prop v="MM" k="offset_unit"/>
+                  <prop v="0" k="ring_filter"/>
+                  <prop v="0" k="use_custom_dash"/>
+                  <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+                  <data_defined_properties>
+                    <Option type="Map">
+                      <Option name="name" type="QString" value=""/>
+                      <Option name="properties"/>
+                      <Option name="type" type="QString" value="collection"/>
+                    </Option>
+                  </data_defined_properties>
+                </layer>
+              </symbol>
+            </layer>
+            <layer class="SimpleLine" locked="0" enabled="1" pass="0">
+              <prop v="square" k="capstyle"/>
+              <prop v="5;2" k="customdash"/>
+              <prop v="3x:0,0,0,0,0,0" k="customdash_map_unit_scale"/>
+              <prop v="MM" k="customdash_unit"/>
+              <prop v="0" k="draw_inside_polygon"/>
+              <prop v="bevel" k="joinstyle"/>
+              <prop v="194,158,215,255" k="line_color"/>
+              <prop v="solid" k="line_style"/>
+              <prop v="1" k="line_width"/>
+              <prop v="MM" k="line_width_unit"/>
+              <prop v="0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="MM" k="offset_unit"/>
+              <prop v="0" k="ring_filter"/>
+              <prop v="0" k="use_custom_dash"/>
+              <prop v="3x:0,0,0,0,0,0" k="width_map_unit_scale"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" type="QString" value=""/>
+                  <Option name="properties"/>
+                  <Option name="type" type="QString" value="collection"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale/>
+      </renderer-v2>
+      <customproperties>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
+        <DiagramCategory scaleDependency="Area" penAlpha="255" labelPlacementMethod="XHeight" height="15" minScaleDenominator="0" sizeType="MM" penColor="#000000" opacity="1" lineSizeScale="3x:0,0,0,0,0,0" backgroundColor="#ffffff" penWidth="0" lineSizeType="MM" enabled="0" sizeScale="3x:0,0,0,0,0,0" scaleBasedVisibility="0" backgroundAlpha="255" barWidth="5" width="15" diagramOrientation="Up" maxScaleDenominator="1e+08" minimumSize="0" rotationOffset="270">
+          <fontProperties style="" description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0"/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings placement="1" obstacle="0" linePlacementFlags="18" dist="0" priority="0" zIndex="0" showAll="1">
+        <properties>
+          <Option type="Map">
+            <Option name="name" type="QString" value=""/>
+            <Option name="properties"/>
+            <Option name="type" type="QString" value="collection"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <fieldConfiguration>
+        <field name="LOCAL_AUTH">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="AREA">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="AREA_ha">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="DES_TYPE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="DES_TITLE">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="COMPILER">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="DES_REF">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="CREATED">
+          <editWidget type="DateTime">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="UPDATED">
+          <editWidget type="DateTime">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="PRECISION">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="ACCURACY">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="LINK">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="REDESIG">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="X">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Y">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="DESIGNATED">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="CLASS">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="LEGISLATIO">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Shape_Leng">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="Shape_Area">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias name="" index="0" field="LOCAL_AUTH"/>
+        <alias name="" index="1" field="AREA"/>
+        <alias name="" index="2" field="AREA_ha"/>
+        <alias name="" index="3" field="DES_TYPE"/>
+        <alias name="" index="4" field="DES_TITLE"/>
+        <alias name="" index="5" field="COMPILER"/>
+        <alias name="" index="6" field="DES_REF"/>
+        <alias name="" index="7" field="CREATED"/>
+        <alias name="" index="8" field="UPDATED"/>
+        <alias name="" index="9" field="PRECISION"/>
+        <alias name="" index="10" field="ACCURACY"/>
+        <alias name="" index="11" field="LINK"/>
+        <alias name="" index="12" field="REDESIG"/>
+        <alias name="" index="13" field="X"/>
+        <alias name="" index="14" field="Y"/>
+        <alias name="" index="15" field="DESIGNATED"/>
+        <alias name="" index="16" field="CLASS"/>
+        <alias name="" index="17" field="LEGISLATIO"/>
+        <alias name="" index="18" field="Shape_Leng"/>
+        <alias name="" index="19" field="Shape_Area"/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <defaults>
+        <default expression="" applyOnUpdate="0" field="LOCAL_AUTH"/>
+        <default expression="" applyOnUpdate="0" field="AREA"/>
+        <default expression="" applyOnUpdate="0" field="AREA_ha"/>
+        <default expression="" applyOnUpdate="0" field="DES_TYPE"/>
+        <default expression="" applyOnUpdate="0" field="DES_TITLE"/>
+        <default expression="" applyOnUpdate="0" field="COMPILER"/>
+        <default expression="" applyOnUpdate="0" field="DES_REF"/>
+        <default expression="" applyOnUpdate="0" field="CREATED"/>
+        <default expression="" applyOnUpdate="0" field="UPDATED"/>
+        <default expression="" applyOnUpdate="0" field="PRECISION"/>
+        <default expression="" applyOnUpdate="0" field="ACCURACY"/>
+        <default expression="" applyOnUpdate="0" field="LINK"/>
+        <default expression="" applyOnUpdate="0" field="REDESIG"/>
+        <default expression="" applyOnUpdate="0" field="X"/>
+        <default expression="" applyOnUpdate="0" field="Y"/>
+        <default expression="" applyOnUpdate="0" field="DESIGNATED"/>
+        <default expression="" applyOnUpdate="0" field="CLASS"/>
+        <default expression="" applyOnUpdate="0" field="LEGISLATIO"/>
+        <default expression="" applyOnUpdate="0" field="Shape_Leng"/>
+        <default expression="" applyOnUpdate="0" field="Shape_Area"/>
+      </defaults>
+      <constraints>
+        <constraint unique_strength="0" field="LOCAL_AUTH" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="AREA" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="AREA_ha" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="DES_TYPE" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="DES_TITLE" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="COMPILER" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="DES_REF" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="CREATED" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="UPDATED" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="PRECISION" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="ACCURACY" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="LINK" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="REDESIG" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="X" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="Y" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="DESIGNATED" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="CLASS" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="LEGISLATIO" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="Shape_Leng" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="Shape_Area" constraints="0" notnull_strength="0" exp_strength="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="LOCAL_AUTH" desc=""/>
+        <constraint exp="" field="AREA" desc=""/>
+        <constraint exp="" field="AREA_ha" desc=""/>
+        <constraint exp="" field="DES_TYPE" desc=""/>
+        <constraint exp="" field="DES_TITLE" desc=""/>
+        <constraint exp="" field="COMPILER" desc=""/>
+        <constraint exp="" field="DES_REF" desc=""/>
+        <constraint exp="" field="CREATED" desc=""/>
+        <constraint exp="" field="UPDATED" desc=""/>
+        <constraint exp="" field="PRECISION" desc=""/>
+        <constraint exp="" field="ACCURACY" desc=""/>
+        <constraint exp="" field="LINK" desc=""/>
+        <constraint exp="" field="REDESIG" desc=""/>
+        <constraint exp="" field="X" desc=""/>
+        <constraint exp="" field="Y" desc=""/>
+        <constraint exp="" field="DESIGNATED" desc=""/>
+        <constraint exp="" field="CLASS" desc=""/>
+        <constraint exp="" field="LEGISLATIO" desc=""/>
+        <constraint exp="" field="Shape_Leng" desc=""/>
+        <constraint exp="" field="Shape_Area" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+      </attributeactions>
+      <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
+        <columns>
+          <column name="LOCAL_AUTH" hidden="0" type="field" width="-1"/>
+          <column name="AREA" hidden="0" type="field" width="-1"/>
+          <column name="AREA_ha" hidden="0" type="field" width="-1"/>
+          <column name="DES_TYPE" hidden="0" type="field" width="-1"/>
+          <column name="DES_TITLE" hidden="0" type="field" width="-1"/>
+          <column name="COMPILER" hidden="0" type="field" width="-1"/>
+          <column name="DES_REF" hidden="0" type="field" width="-1"/>
+          <column name="CREATED" hidden="0" type="field" width="-1"/>
+          <column name="UPDATED" hidden="0" type="field" width="-1"/>
+          <column name="PRECISION" hidden="0" type="field" width="-1"/>
+          <column name="ACCURACY" hidden="0" type="field" width="-1"/>
+          <column name="LINK" hidden="0" type="field" width="-1"/>
+          <column name="REDESIG" hidden="0" type="field" width="-1"/>
+          <column name="X" hidden="0" type="field" width="-1"/>
+          <column name="Y" hidden="0" type="field" width="-1"/>
+          <column name="DESIGNATED" hidden="0" type="field" width="-1"/>
+          <column name="CLASS" hidden="0" type="field" width="-1"/>
+          <column name="LEGISLATIO" hidden="0" type="field" width="-1"/>
+          <column name="Shape_Leng" hidden="0" type="field" width="-1"/>
+          <column name="Shape_Area" hidden="0" type="field" width="-1"/>
+          <column hidden="1" type="actions" width="-1"/>
+        </columns>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+	geom = feature.geometry()
+	control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable>
+        <field name="ACCURACY" editable="1"/>
+        <field name="AREA" editable="1"/>
+        <field name="AREA_ha" editable="1"/>
+        <field name="CLASS" editable="1"/>
+        <field name="COMPILER" editable="1"/>
+        <field name="CREATED" editable="1"/>
+        <field name="DESIGNATED" editable="1"/>
+        <field name="DES_REF" editable="1"/>
+        <field name="DES_TITLE" editable="1"/>
+        <field name="DES_TYPE" editable="1"/>
+        <field name="LEGISLATIO" editable="1"/>
+        <field name="LINK" editable="1"/>
+        <field name="LOCAL_AUTH" editable="1"/>
+        <field name="PRECISION" editable="1"/>
+        <field name="REDESIG" editable="1"/>
+        <field name="Shape_Area" editable="1"/>
+        <field name="Shape_Leng" editable="1"/>
+        <field name="UPDATED" editable="1"/>
+        <field name="X" editable="1"/>
+        <field name="Y" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field name="ACCURACY" labelOnTop="0"/>
+        <field name="AREA" labelOnTop="0"/>
+        <field name="AREA_ha" labelOnTop="0"/>
+        <field name="CLASS" labelOnTop="0"/>
+        <field name="COMPILER" labelOnTop="0"/>
+        <field name="CREATED" labelOnTop="0"/>
+        <field name="DESIGNATED" labelOnTop="0"/>
+        <field name="DES_REF" labelOnTop="0"/>
+        <field name="DES_TITLE" labelOnTop="0"/>
+        <field name="DES_TYPE" labelOnTop="0"/>
+        <field name="LEGISLATIO" labelOnTop="0"/>
+        <field name="LINK" labelOnTop="0"/>
+        <field name="LOCAL_AUTH" labelOnTop="0"/>
+        <field name="PRECISION" labelOnTop="0"/>
+        <field name="REDESIG" labelOnTop="0"/>
+        <field name="Shape_Area" labelOnTop="0"/>
+        <field name="Shape_Leng" labelOnTop="0"/>
+        <field name="UPDATED" labelOnTop="0"/>
+        <field name="X" labelOnTop="0"/>
+        <field name="Y" labelOnTop="0"/>
+      </labelOnTop>
+      <widgets/>
+      <previewExpression>LOCAL_AUTH</previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+  </maplayers>
+</qlr>

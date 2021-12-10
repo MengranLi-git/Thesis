@@ -1,0 +1,2 @@
+"0","rm(p1, p2, p3, p4)"
+"0","b <- getViz(gamfit3)"

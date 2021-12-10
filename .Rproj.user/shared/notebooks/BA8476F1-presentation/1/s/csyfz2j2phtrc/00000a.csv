@@ -1,0 +1,43 @@
+"0","library(RefManageR)"
+"0","BibOptions("
+"0","check.entries = FALSE, "
+"0","bib.style = ""authoryear"", "
+"0","cite.style = ""authoryear"", "
+"0","style = ""markdown"","
+"0","hyperlink = FALSE, "
+"0","dashed = FALSE)"
+"0","myBib = ReadBib(""references.bib"", check = FALSE)"
+"0","SearchBib(myBib)"
+"1","GAMs in Practice: mgcv (2017). “GAMs in Practice: mgcv”. In:
+Chapman and Hall/CRC, pp. 325-403. DOI:
+[10.1201/9781315370279-7](https://doi.org/10.1201%2F9781315370279-7).
+URL:
+[http://dx.doi.org/10.1201/9781315370279-7](http://dx.doi.org/10.1201/9781315370279-7).
+
+Franco-Villoria, M., M. Scott, and T. Hoey (2018).
+“Spatiotemporal modeling of hydrological return levels: A
+quantile regression approach”. In: _Environmetrics_ 30.2, p.
+e2522. DOI:
+[10.1002/env.2522](https://doi.org/10.1002%2Fenv.2522). URL:
+[http://dx.doi.org/10.1002/env.2522](http://dx.doi.org/10.1002/env.2522).
+
+O'Donnell, D., A. Rushworth, A. W. Bowman, et al. (2013).
+“Flexible regression models over river networks”. In: _Journal
+of the Royal Statistical Society: Series C (Applied
+Statistics)_ 63.1, pp. 47-63. DOI:
+[10.1111/rssc.12024](https://doi.org/10.1111%2Frssc.12024).
+URL:
+[http://dx.doi.org/10.1111/rssc.12024](http://dx.doi.org/10.1111/rssc.12024).
+
+Wood, S. N. (2017). _Generalized Additive Models_. Chapman and
+Hall/CRC. DOI:
+[10.1201/9781315370279](https://doi.org/10.1201%2F9781315370279).
+URL:
+[http://dx.doi.org/10.1201/9781315370279](http://dx.doi.org/10.1201/9781315370279).
+
+Zhang, X. and H. Liang (2011). “Focused information criterion
+and model averaging for generalized additive partial linear
+models”. In: _The Annals of Statistics_ 39.1. DOI:
+[10.1214/10-aos832](https://doi.org/10.1214%2F10-aos832). URL:
+[http://dx.doi.org/10.1214/10-AOS832](http://dx.doi.org/10.1214/10-AOS832).
+"

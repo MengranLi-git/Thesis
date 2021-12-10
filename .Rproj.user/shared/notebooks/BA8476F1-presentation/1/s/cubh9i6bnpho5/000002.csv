@@ -1,0 +1,7 @@
+"0","# Transform the Flow into log"
+"0","load(""data.Rdata"")"
+"0","data %>% select(Flow) %>% mutate(logFlow = log(Flow)) %>% gather(key = ""group"") %>%"
+"0","  ggplot(aes(value)) +"
+"0","  geom_density()+"
+"0","  theme_xaringan()+"
+"0","  facet_wrap(~group, scale = ""free"")"

@@ -1,0 +1,6 @@
+"0","f1 <- glance(gamfit1)"
+"0","f2 <- glance(gamfit2)"
+"0","f3 <- glance(gamfit3)"
+"0","f <- rbind(f1,f2)"
+"0","f <- rbind(f,f3)"
+"0","f %>% add_column(Model = c(""gamfit1"",""gamfit2"",""gamfit3""), .before = ""df"") %>% kable(format = 'html', caption = ""Tab.1 Model comparison"")"

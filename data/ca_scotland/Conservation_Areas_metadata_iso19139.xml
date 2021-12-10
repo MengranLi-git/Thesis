@@ -1,0 +1,564 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:MD_Metadata xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns2="http://www.isotc211.org/2005/gco" xmlns:ns3="http://www.opengis.net/gml/3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+  <ns0:fileIdentifier>
+      <ns2:CharacterString>61e70ae1-bbfa-40f7-a72c-2b782a63f81c</ns2:CharacterString>
+  </ns0:fileIdentifier>
+  <ns0:language>
+      <ns0:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
+  </ns0:language>
+  <ns0:hierarchyLevel>
+      <ns0:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" />
+  </ns0:hierarchyLevel>
+  <ns0:contact>
+      <ns0:CI_ResponsibleParty>
+         <ns0:individualName ns2:nilReason="missing">
+            <ns2:CharacterString />
+         </ns0:individualName>
+         <ns0:organisationName>
+            <ns2:CharacterString>Historic Environment Scotland</ns2:CharacterString>
+         </ns0:organisationName>
+         <ns0:positionName>
+            <ns2:CharacterString>GIS Officer</ns2:CharacterString>
+         </ns0:positionName>
+         <ns0:contactInfo>
+            <ns0:CI_Contact>
+               <ns0:phone>
+                  <ns0:CI_Telephone>
+                     <ns0:voice>
+                        <ns2:CharacterString>0131 668 8832</ns2:CharacterString>
+                     </ns0:voice>
+                     <ns0:facsimile ns2:nilReason="missing">
+                        <ns2:CharacterString />
+                     </ns0:facsimile>
+                  </ns0:CI_Telephone>
+               </ns0:phone>
+               <ns0:address>
+                  <ns0:CI_Address>
+                     <ns0:deliveryPoint>
+                        <ns2:CharacterString>Longmore House, Salisbury Place</ns2:CharacterString>
+                     </ns0:deliveryPoint>
+                     <ns0:city>
+                        <ns2:CharacterString>Edinburgh</ns2:CharacterString>
+                     </ns0:city>
+                     <ns0:administrativeArea>
+                        <ns2:CharacterString>Scotland</ns2:CharacterString>
+                     </ns0:administrativeArea>
+                     <ns0:postalCode>
+                        <ns2:CharacterString>EH9 1SH</ns2:CharacterString>
+                     </ns0:postalCode>
+                     <ns0:country>
+                        <ns2:CharacterString>United Kingdom</ns2:CharacterString>
+                     </ns0:country>
+                     <ns0:electronicMailAddress>
+                        <ns2:CharacterString>GIEnquiries@hes.scot</ns2:CharacterString>
+                     </ns0:electronicMailAddress>
+                  </ns0:CI_Address>
+               </ns0:address>
+            </ns0:CI_Contact>
+         </ns0:contactInfo>
+         <ns0:role>
+            <ns0:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+         </ns0:role>
+      </ns0:CI_ResponsibleParty>
+  </ns0:contact>
+  <ns0:dateStamp>
+      <ns2:DateTime>2016-04-25T11:56:03</ns2:DateTime>
+  </ns0:dateStamp>
+  <ns0:referenceSystemInfo>
+      <ns0:MD_ReferenceSystem>
+         <ns0:referenceSystemIdentifier>
+            <ns0:RS_Identifier>
+               <ns0:code>
+                  <ns2:CharacterString>urn:ogc:def:crs:EPSG::27700</ns2:CharacterString>
+               </ns0:code>
+            </ns0:RS_Identifier>
+         </ns0:referenceSystemIdentifier>
+      </ns0:MD_ReferenceSystem>
+  </ns0:referenceSystemInfo>
+  <ns0:identificationInfo>
+      <ns0:MD_DataIdentification>
+         <ns0:citation>
+            <ns0:CI_Citation>
+               <ns0:title>
+                  <ns2:CharacterString>Conservation Areas (DATASET)</ns2:CharacterString>
+               </ns0:title>
+               <ns0:alternateTitle>
+                  <ns2:CharacterString>Local Authority Conservation Areas</ns2:CharacterString>
+               </ns0:alternateTitle>
+               <ns0:date>
+                  <ns0:CI_Date>
+                     <ns0:date>
+                        <ns2:Date>2003-01-01</ns2:Date>
+                     </ns0:date>
+                     <ns0:dateType>
+                        <ns0:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation" />
+                     </ns0:dateType>
+                  </ns0:CI_Date>
+               </ns0:date>
+               <ns0:date>
+                  <ns0:CI_Date>
+                     <ns0:date>
+                        <ns2:Date>2011-11-26</ns2:Date>
+                     </ns0:date>
+                     <ns0:dateType>
+                        <ns0:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                     </ns0:dateType>
+                  </ns0:CI_Date>
+               </ns0:date>
+               <ns0:date>
+                  <ns0:CI_Date>
+                     <ns0:date>
+                        <ns2:Date>2019-12-18</ns2:Date>
+                     </ns0:date>
+                     <ns0:dateType>
+                        <ns0:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision" />
+                     </ns0:dateType>
+                  </ns0:CI_Date>
+               </ns0:date>
+               <ns0:identifier>
+                  <ns0:RS_Identifier>
+                     <ns0:code>
+                        <ns2:CharacterString>HESCA</ns2:CharacterString>
+                     </ns0:code>
+                  </ns0:RS_Identifier>
+               </ns0:identifier>
+               <ns0:presentationForm>
+                  <ns0:CI_PresentationFormCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_PresentationFormCode" codeListValue="mapDigital" />
+               </ns0:presentationForm>
+            </ns0:CI_Citation>
+         </ns0:citation>
+         <ns0:abstract>
+            <ns2:CharacterString>The defining of Conservation Areas is governed by the Planning (Listed Buildings and Conservation Areas) (Scotland) Act 1997; an update from previous Acts relating to such areas. Conservation Areas are designated by local planning authorities and can play an important role in environmental enhancement, economic and community regeneration (e.g. Townscape Heritage Initiatives and Conservation Areas Regeneration Schemes).
+
+Councils review conservation areas from time to time in order to assess the need for alteration of boundaries for areas for which special planning considerations apply, e.g. Article 4 directions. Many conservation areas now have character appraisals to explain what it is that should be preserved and what can be enhanced.</ns2:CharacterString>
+         </ns0:abstract>
+         <ns0:pointOfContact>
+            <ns0:CI_ResponsibleParty>
+               <ns0:individualName ns2:nilReason="missing">
+                  <ns2:CharacterString />
+               </ns0:individualName>
+               <ns0:organisationName>
+                  <ns2:CharacterString>Historic Environment Scotland</ns2:CharacterString>
+               </ns0:organisationName>
+               <ns0:positionName>
+                  <ns2:CharacterString>GIS Officer</ns2:CharacterString>
+               </ns0:positionName>
+               <ns0:contactInfo>
+                  <ns0:CI_Contact>
+                     <ns0:phone>
+                        <ns0:CI_Telephone>
+                           <ns0:voice>
+                              <ns2:CharacterString>0131 668 8832</ns2:CharacterString>
+                           </ns0:voice>
+                           <ns0:facsimile ns2:nilReason="missing">
+                              <ns2:CharacterString />
+                           </ns0:facsimile>
+                        </ns0:CI_Telephone>
+                     </ns0:phone>
+                     <ns0:address>
+                        <ns0:CI_Address>
+                           <ns0:deliveryPoint>
+                              <ns2:CharacterString>Longmore House, Salisbury Place</ns2:CharacterString>
+                           </ns0:deliveryPoint>
+                           <ns0:city>
+                              <ns2:CharacterString>Edinburgh</ns2:CharacterString>
+                           </ns0:city>
+                           <ns0:administrativeArea>
+                              <ns2:CharacterString>Scotland</ns2:CharacterString>
+                           </ns0:administrativeArea>
+                           <ns0:postalCode>
+                              <ns2:CharacterString>EH9 1SH</ns2:CharacterString>
+                           </ns0:postalCode>
+                           <ns0:country>
+                              <ns2:CharacterString>United Kingdom</ns2:CharacterString>
+                           </ns0:country>
+                           <ns0:electronicMailAddress>
+                              <ns2:CharacterString>GIEnquiries@hes.scot</ns2:CharacterString>
+                           </ns0:electronicMailAddress>
+                        </ns0:CI_Address>
+                     </ns0:address>
+                  </ns0:CI_Contact>
+               </ns0:contactInfo>
+               <ns0:role>
+                  <ns0:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="distributor" />
+               </ns0:role>
+            </ns0:CI_ResponsibleParty>
+         </ns0:pointOfContact>
+         <ns0:pointOfContact>
+            <ns0:CI_ResponsibleParty>
+               <ns0:individualName ns2:nilReason="missing">
+                  <ns2:CharacterString />
+               </ns0:individualName>
+               <ns0:organisationName>
+                  <ns2:CharacterString>Historic Environment Scotland</ns2:CharacterString>
+               </ns0:organisationName>
+               <ns0:positionName>
+                  <ns2:CharacterString>GIS Officer</ns2:CharacterString>
+               </ns0:positionName>
+               <ns0:contactInfo>
+                  <ns0:CI_Contact>
+                     <ns0:phone>
+                        <ns0:CI_Telephone>
+                           <ns0:voice>
+                              <ns2:CharacterString>0131 668 8832</ns2:CharacterString>
+                           </ns0:voice>
+                           <ns0:facsimile ns2:nilReason="missing">
+                              <ns2:CharacterString />
+                           </ns0:facsimile>
+                        </ns0:CI_Telephone>
+                     </ns0:phone>
+                     <ns0:address>
+                        <ns0:CI_Address>
+                           <ns0:deliveryPoint>
+                              <ns2:CharacterString>Longmore House, Salisbury Place</ns2:CharacterString>
+                           </ns0:deliveryPoint>
+                           <ns0:city>
+                              <ns2:CharacterString>Edinburgh</ns2:CharacterString>
+                           </ns0:city>
+                           <ns0:administrativeArea>
+                              <ns2:CharacterString>Scotland</ns2:CharacterString>
+                           </ns0:administrativeArea>
+                           <ns0:postalCode>
+                              <ns2:CharacterString>EH9 1SH</ns2:CharacterString>
+                           </ns0:postalCode>
+                           <ns0:country>
+                              <ns2:CharacterString>United Kingdom</ns2:CharacterString>
+                           </ns0:country>
+                           <ns0:electronicMailAddress>
+                              <ns2:CharacterString>GIEnquiries@hes.scot</ns2:CharacterString>
+                           </ns0:electronicMailAddress>
+                        </ns0:CI_Address>
+                     </ns0:address>
+                  </ns0:CI_Contact>
+               </ns0:contactInfo>
+               <ns0:role>
+                  <ns0:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+               </ns0:role>
+            </ns0:CI_ResponsibleParty>
+         </ns0:pointOfContact>
+         <ns0:resourceMaintenance>
+            <ns0:MD_MaintenanceInformation>
+               <ns0:maintenanceAndUpdateFrequency>
+                  <ns0:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded" />
+               </ns0:maintenanceAndUpdateFrequency>
+            </ns0:MD_MaintenanceInformation>
+         </ns0:resourceMaintenance>
+         <ns0:graphicOverview>
+            <ns0:MD_BrowseGraphic>
+               <ns0:fileName>
+                  <ns2:CharacterString>conservation_areasv2_s.png</ns2:CharacterString>
+               </ns0:fileName>
+               <ns0:fileDescription>
+                  <ns2:CharacterString>thumbnail</ns2:CharacterString>
+               </ns0:fileDescription>
+               <ns0:fileType>
+                  <ns2:CharacterString>png</ns2:CharacterString>
+               </ns0:fileType>
+            </ns0:MD_BrowseGraphic>
+         </ns0:graphicOverview>
+         <ns0:graphicOverview>
+            <ns0:MD_BrowseGraphic>
+               <ns0:fileName>
+                  <ns2:CharacterString>conservation_areasv2.png</ns2:CharacterString>
+               </ns0:fileName>
+               <ns0:fileDescription>
+                  <ns2:CharacterString>large_thumbnail</ns2:CharacterString>
+               </ns0:fileDescription>
+               <ns0:fileType>
+                  <ns2:CharacterString>png</ns2:CharacterString>
+               </ns0:fileType>
+            </ns0:MD_BrowseGraphic>
+         </ns0:graphicOverview>
+         <ns0:resourceFormat>
+            <ns0:MD_Format>
+               <ns0:name>
+                  <ns2:CharacterString>Layer</ns2:CharacterString>
+               </ns0:name>
+               <ns0:version>
+                  <ns2:CharacterString>various</ns2:CharacterString>
+               </ns0:version>
+            </ns0:MD_Format>
+         </ns0:resourceFormat>
+         <ns0:descriptiveKeywords>
+            <ns0:MD_Keywords>
+               <ns0:keyword>
+                  <ns2:CharacterString>Protected area</ns2:CharacterString>
+               </ns0:keyword>
+               <ns0:keyword>
+                  <ns2:CharacterString>historic centre</ns2:CharacterString>
+               </ns0:keyword>
+               <ns0:thesaurusName>
+                  <ns0:CI_Citation>
+                     <ns0:title>
+                        <ns2:CharacterString>General Multilingual Environmental Thesaurus</ns2:CharacterString>
+                     </ns0:title>
+                     <ns0:date>
+                        <ns0:CI_Date>
+                           <ns0:date>
+                              <ns2:Date>2012-07-20</ns2:Date>
+                           </ns0:date>
+                           <ns0:dateType>
+                              <ns0:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                           </ns0:dateType>
+                        </ns0:CI_Date>
+                     </ns0:date>
+                  </ns0:CI_Citation>
+               </ns0:thesaurusName>
+            </ns0:MD_Keywords>
+         </ns0:descriptiveKeywords>
+         <ns0:descriptiveKeywords>
+            <ns0:MD_Keywords>
+               <ns0:keyword>
+                  <ns2:CharacterString>Protected sites</ns2:CharacterString>
+               </ns0:keyword>
+               <ns0:thesaurusName>
+                  <ns0:CI_Citation>
+                     <ns0:title>
+                        <ns2:CharacterString>GEMET -INSPIRE themes</ns2:CharacterString>
+                     </ns0:title>
+                     <ns0:date>
+                        <ns0:CI_Date>
+                           <ns0:date>
+                              <ns2:Date>2008-06-01</ns2:Date>
+                           </ns0:date>
+                           <ns0:dateType>
+                              <ns0:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                           </ns0:dateType>
+                        </ns0:CI_Date>
+                     </ns0:date>
+                  </ns0:CI_Citation>
+               </ns0:thesaurusName>
+            </ns0:MD_Keywords>
+         </ns0:descriptiveKeywords>
+         <ns0:descriptiveKeywords>
+            <ns0:MD_Keywords>
+               <ns0:keyword>
+                  <ns2:CharacterString>Conservation areas</ns2:CharacterString>
+               </ns0:keyword>
+               <ns0:keyword>
+                  <ns2:CharacterString>Urban conservation</ns2:CharacterString>
+               </ns0:keyword>
+               <ns0:thesaurusName>
+                  <ns0:CI_Citation>
+                     <ns0:title>
+                        <ns2:CharacterString>IPSV-Integrated Public Sector Vocabulary</ns2:CharacterString>
+                     </ns0:title>
+                     <ns0:date>
+                        <ns0:CI_Date>
+                           <ns0:date>
+                              <ns2:Date>2006-04-03</ns2:Date>
+                           </ns0:date>
+                           <ns0:dateType>
+                              <ns0:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                           </ns0:dateType>
+                        </ns0:CI_Date>
+                     </ns0:date>
+                  </ns0:CI_Citation>
+               </ns0:thesaurusName>
+            </ns0:MD_Keywords>
+         </ns0:descriptiveKeywords>
+         <ns0:resourceConstraints>
+            <ns0:MD_Constraints>
+               <ns0:useLimitation>
+                  <ns2:CharacterString>This data is indicative only and reference should always be made to the relevant local authority. It should be noted that amendments to the schedule are made by local authorities and that the information may change or not be current until the local authority has notifed us of any changes.</ns2:CharacterString>
+               </ns0:useLimitation>
+               <ns0:useLimitation>
+                  <ns2:CharacterString>This data is licensed under the UK Open Government Licence http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/.</ns2:CharacterString>
+               </ns0:useLimitation>
+               <ns0:useLimitation>
+                  <ns2:CharacterString>If this data is reproduced it must be attributed with the following: Contains Historic Environment Scotland and Ordnance Survey data © Historic Environment Scotland - Scottish Charity No. SC045925 © Crown copyright and database right [year]</ns2:CharacterString>
+               </ns0:useLimitation>
+            </ns0:MD_Constraints>
+         </ns0:resourceConstraints>
+         <ns0:spatialRepresentationType>
+            <ns0:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="vector" />
+         </ns0:spatialRepresentationType>
+         <ns0:spatialResolution>
+            <ns0:MD_Resolution>
+               <ns0:distance>
+                  <ns2:Distance uom="urn:ogc:def:uom:EPSG::9001">3</ns2:Distance>
+               </ns0:distance>
+            </ns0:MD_Resolution>
+         </ns0:spatialResolution>
+         <ns0:spatialResolution>
+            <ns0:MD_Resolution>
+               <ns0:equivalentScale>
+                  <ns0:MD_RepresentativeFraction>
+                     <ns0:denominator>
+                        <ns2:Integer>2500</ns2:Integer>
+                     </ns0:denominator>
+                  </ns0:MD_RepresentativeFraction>
+               </ns0:equivalentScale>
+            </ns0:MD_Resolution>
+         </ns0:spatialResolution>
+         <ns0:language>
+            <ns0:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
+         </ns0:language>
+         <ns0:topicCategory>
+            <ns0:MD_TopicCategoryCode>boundaries</ns0:MD_TopicCategoryCode>
+         </ns0:topicCategory>
+         <ns0:topicCategory>
+            <ns0:MD_TopicCategoryCode>environment</ns0:MD_TopicCategoryCode>
+         </ns0:topicCategory>
+         <ns0:extent>
+            <ns0:EX_Extent>
+               <ns0:geographicElement>
+                  <ns0:EX_GeographicBoundingBox>
+                     <ns0:westBoundLongitude>
+                        <ns2:Decimal>-7.75714</ns2:Decimal>
+                     </ns0:westBoundLongitude>
+                     <ns0:eastBoundLongitude>
+                        <ns2:Decimal>-0.53202</ns2:Decimal>
+                     </ns0:eastBoundLongitude>
+                     <ns0:southBoundLatitude>
+                        <ns2:Decimal>54.53297</ns2:Decimal>
+                     </ns0:southBoundLatitude>
+                     <ns0:northBoundLatitude>
+                        <ns2:Decimal>61.46459</ns2:Decimal>
+                     </ns0:northBoundLatitude>
+                  </ns0:EX_GeographicBoundingBox>
+               </ns0:geographicElement>
+               <ns0:temporalElement>
+                  <ns0:EX_TemporalExtent>
+                     <ns0:extent>
+                        <ns3:TimePeriod ns3:id="T1">
+                           <ns3:beginPosition>1968</ns3:beginPosition>
+                           <ns3:endPosition />
+                        </ns3:TimePeriod>
+                     </ns0:extent>
+                  </ns0:EX_TemporalExtent>
+               </ns0:temporalElement>
+            </ns0:EX_Extent>
+         </ns0:extent>
+         <ns0:supplementalInformation>
+            <ns2:CharacterString>Historic Scotland is an Executive Agency within the Scottish Government, responsible to Scottish Ministers for safeguarding the nation's built heritage and promoting its understanding and enjoyment.</ns2:CharacterString>
+         </ns0:supplementalInformation>
+      </ns0:MD_DataIdentification>
+  </ns0:identificationInfo>
+  <ns0:distributionInfo>
+      <ns0:MD_Distribution>
+         <ns0:distributionFormat>
+            <ns0:MD_Format>
+               <ns0:name>
+                  <ns2:CharacterString>ESRI Shapefile</ns2:CharacterString>
+               </ns0:name>
+               <ns0:version>
+                  <ns2:CharacterString>2013</ns2:CharacterString>
+               </ns0:version>
+            </ns0:MD_Format>
+         </ns0:distributionFormat>
+         <ns0:distributor>
+            <ns0:MD_Distributor>
+               <ns0:distributorContact>
+                  <ns0:CI_ResponsibleParty>
+                     <ns0:individualName>
+                        <ns2:CharacterString>see individual Council representative</ns2:CharacterString>
+                     </ns0:individualName>
+                     <ns0:organisationName>
+                        <ns2:CharacterString>individual Council (for Falkirk, Stirling, Clackmannanshire see Forth Valley GIS)</ns2:CharacterString>
+                     </ns0:organisationName>
+                     <ns0:positionName>
+                        <ns2:CharacterString>various</ns2:CharacterString>
+                     </ns0:positionName>
+                     <ns0:contactInfo>
+                        <ns0:CI_Contact>
+                           <ns0:address>
+                              <ns0:CI_Address>
+                                 <ns0:electronicMailAddress ns2:nilReason="missing">
+                                    <ns2:CharacterString />
+                                 </ns0:electronicMailAddress>
+                              </ns0:CI_Address>
+                           </ns0:address>
+                        </ns0:CI_Contact>
+                     </ns0:contactInfo>
+                     <ns0:role>
+                        <ns0:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_RoleCode" codeListValue="distributor" />
+                     </ns0:role>
+                  </ns0:CI_ResponsibleParty>
+               </ns0:distributorContact>
+               <ns0:distributorFormat>
+                  <ns0:MD_Format>
+                     <ns0:name>
+                        <ns2:CharacterString>ESRI Shapefile</ns2:CharacterString>
+                     </ns0:name>
+                     <ns0:version>
+                        <ns2:CharacterString>2013</ns2:CharacterString>
+                     </ns0:version>
+                  </ns0:MD_Format>
+               </ns0:distributorFormat>
+               <ns0:distributorTransferOptions>
+                  <ns0:MD_DigitalTransferOptions>
+                     <ns0:onLine>
+                        <ns0:CI_OnlineResource>
+                           <ns0:linkage>
+                              <ns0:URL>https://portal.historicenvironment.scot/downloads</ns0:URL>
+                           </ns0:linkage>
+                        </ns0:CI_OnlineResource>
+                     </ns0:onLine>
+                  </ns0:MD_DigitalTransferOptions>
+               </ns0:distributorTransferOptions>
+            </ns0:MD_Distributor>
+         </ns0:distributor>
+         <ns0:transferOptions>
+            <ns0:MD_DigitalTransferOptions>
+               <ns0:onLine>
+                  <ns0:CI_OnlineResource>
+                     <ns0:linkage>
+                        <ns0:URL>http://inspire.hes.scot/AtomService/HES_AtomService.atom.en.xml</ns0:URL>
+                     </ns0:linkage>
+                  </ns0:CI_OnlineResource>
+               </ns0:onLine>
+            </ns0:MD_DigitalTransferOptions>
+         </ns0:transferOptions>
+      </ns0:MD_Distribution>
+  </ns0:distributionInfo>
+  <ns0:dataQualityInfo>
+      <ns0:DQ_DataQuality>
+         <ns0:scope>
+            <ns0:DQ_Scope>
+               <ns0:level>
+                  <ns0:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" />
+               </ns0:level>
+            </ns0:DQ_Scope>
+         </ns0:scope>
+         <ns0:report>
+            <ns0:DQ_DomainConsistency>
+               <ns0:result>
+                  <ns0:DQ_ConformanceResult>
+                     <ns0:specification>
+                        <ns0:CI_Citation>
+                           <ns0:title>
+                              <ns2:CharacterString>INSPIRE Data Specification on Protected Sites - Guidelines v 3.1.0</ns2:CharacterString>
+                           </ns0:title>
+                           <ns0:date>
+                              <ns0:CI_Date>
+                                 <ns0:date>
+                                    <ns2:Date>2010-05-03</ns2:Date>
+                                 </ns0:date>
+                                 <ns0:dateType>
+                                    <ns0:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                                 </ns0:dateType>
+                              </ns0:CI_Date>
+                           </ns0:date>
+                        </ns0:CI_Citation>
+                     </ns0:specification>
+                     <ns0:explanation>
+                        <ns2:CharacterString>This dataset is not in a conformed format (such as GML).  However, it conforms to projection and metadata.  Vertical data in metadata is currently from Chart Datum. The temporal extent of the data is not ended as this is a live dataset, which may change in the future.  The version date of the data can be found under Temporal Extent.</ns2:CharacterString>
+                     </ns0:explanation>
+                     <ns0:pass>
+                        <ns2:Boolean>true</ns2:Boolean>
+                     </ns0:pass>
+                  </ns0:DQ_ConformanceResult>
+               </ns0:result>
+            </ns0:DQ_DomainConsistency>
+         </ns0:report>
+         <ns0:lineage>
+            <ns0:LI_Lineage>
+               <ns0:statement>
+                  <ns2:CharacterString>The dataset was first created from the merging of shapefile and Cad data provided by some councils from 2003 (see attribute table for details).  Some in-house data capture at 1:2500 from published maps was also undertaken.  Since then the dataset is being refreshed by data supplied by local authorities.</ns2:CharacterString>
+               </ns0:statement>
+            </ns0:LI_Lineage>
+         </ns0:lineage>
+      </ns0:DQ_DataQuality>
+  </ns0:dataQualityInfo>
+</ns0:MD_Metadata>

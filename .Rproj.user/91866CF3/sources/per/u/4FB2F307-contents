@@ -1,0 +1,56 @@
+library(tidyverse)
+library(mgcv)
+library(broom)
+load("F:/thesis_uofg/files/data.Rdata")
+subdata <- data %>% filter(River %in% c("Inver", "Clyde", "Earn", "Deveron", "Strathy", "Tweed"))
+
+subdata <- data %>% filter(ID %in% c(9005, 21009, 79004, 10002, 96003, 83013,  4001, 12006, 15012, 15013, 82003, 84003,  8009))
+result <- bam_sample(subdata)
+
+gam.check(fit)
+
+fit$residuals
+
+resid <- residuals(fit)
+subdata$resid <-resid 
+residUK <- subdata %>% group_by(ID, Longitude,Latitude) %>% summarise(resid = mean(resid))
+residUK <- as.geodata(residUK, coords.col=2:3, data.col=4, borders=TRUE)
+library(geoR)
+vari <- variog(residUK)
+vari.mc <- variog.mc.env(residUK, obj.variog=vari)
+plot(vari, envelope.obj=vari.mc)
+
+f <- result[[1]]
+fit <- result[[2]][[4]][[4]]
+
+summary(fit)
+save(f,fit,residUK, file = "F:/thesis_uofg/files/sub.Rdata")
+
+
+subdata1 <- subdata %>% filter(ID == 21009)
+
+
+auto.arima(subdata1$res)
+
+tidy(fit)
+
+g1 <- data.frame(Estimate = g$p.coeff,
+           se = g$se[1:3],
+           t.stat = g$p.t,
+           p = g$p.pv) 
+g2 <- tidy(fit)
+g2
+
+names(g2) <- c("")
+
+p1 <- function() {
+  plot(vari, envelope.obj=vari.mc)
+}
+
+ggdraw(p1) +
+  theme(plot.background = element_rect(fill = "cornsilk"))
+
+
+
+
+
